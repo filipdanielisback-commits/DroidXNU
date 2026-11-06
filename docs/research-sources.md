@@ -17,7 +17,7 @@ This register tracks public references used by DroidXNU. It records what each so
 ## Citation and provenance rules
 
 - Link to the original source, not a rehosted copy.
-- Record the exact branch, tag, release or commit when source code is reviewed.
+- Record the exact branch, tag, release or commit when source code is reviewed. The XT2135-2 Android 12 HANOIP source tag resolves to commit `f6673a1302e3b9ca84c54e956ad4075d676fdf59`; GitHub reports the tag as unsigned.
 - Preserve upstream copyright and license notices.
 - Do not copy code until its license and compatibility with this repository are reviewed.
 - Mark third-party device information as community-reported unless confirmed by Motorola or a model-matched primary source.
