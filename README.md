@@ -2,7 +2,7 @@
 
 **Independent XNU / Darwin kernel-port research for the Motorola Moto G60 (XT2135-2).**
 
-DroidXNU is an experimental operating-system research project. Its goal is to investigate what would be required to bring an XNU-derived kernel environment to the Moto G60, beginning with source study, hardware documentation, and host-side development.
+DroidXNU is an experimental operating-system research project. Its goal is to investigate what would be required to bring an XNU-derived kernel environment to the Moto G60, beginning with source study, hardware documentation, and safe host-side development.
 
 > **Status: early research — no bootable image, device port, EFI loader, or iOS 26 compatibility is available.**
 >
@@ -25,12 +25,24 @@ These are not proof that the phone can boot XNU. Device compatibility depends on
 
 ## Project layout
 
-- `docs/` — requirements, architecture, hardware research, compatibility and licensing notes.
+- `docs/` — requirements, roadmap, hardware research, compatibility and licensing notes.
 - `kernel/` — future XNU integration and project-owned patches; currently a placeholder.
-- `loader/efi/` — EFI research notes; no device boot code yet.
+- `loader/efi/` — loader feasibility research; no device boot code yet.
 - `boot-menu/` — boot-menu specification and a harmless host-side menu mock-up.
 - `devices/moto-g60/` — device facts and compatibility status.
 - `drivers/` — future, independently developed driver work.
+- `tools/` — host-only metadata validation and unit tests.
+
+## Host-side checks
+
+From the repository root in WSL2, run:
+
+```sh
+python3 tools/validate_device_config.py
+python3 -m unittest discover -s tools -p 'test_*.py'
+```
+
+These checks only read project files. They do not connect to or modify a phone.
 
 ## Boot-menu concept
 
@@ -49,7 +61,7 @@ The current host mock-up only prints menu choices. It does not access EFI servic
 4. Study XNU's ARM64 platform dependencies and identify the gap between those requirements and the Moto G60.
 5. Keep development host-side and non-destructive until the platform is understood.
 
-**QEMU is not part of this project's roadmap.** DroidXNU is focusing its research on the physical Moto G60 target and host-side source analysis; no emulator test bench is planned.
+**QEMU is not part of this project's roadmap.** DroidXNU is focusing on the physical Moto G60 target and host-side source analysis; no emulator test bench is planned.
 
 ## Source references
 
@@ -64,11 +76,11 @@ We will study references and licenses, but will not copy another project's imple
 
 ## Safety and data protection
 
-No flashing scripts or partition-writing tools are provided. Do not test experimental code on the daily-use phone. Keep original Android recovery options and personal data protected. Firmware, keys, certificates, and proprietary system images must not be committed.
+No device-modification tools are provided. Do not test experimental code on the daily-use phone. Keep original Android recovery options and personal data protected. Do not commit proprietary system images, credentials, keys, or private data.
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md), [requirements](docs/requirements.md), [hardware research](docs/hardware-research.md), and [compatibility status](docs/compatibility.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md), [requirements](docs/requirements.md), [roadmap](docs/roadmap.md), [hardware research](docs/hardware-research.md), and [compatibility status](docs/compatibility.md).
 
 ## License
 
