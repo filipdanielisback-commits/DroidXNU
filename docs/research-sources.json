@@ -82,15 +82,6 @@
       "confidence": "primary-source",
       "supports": "Motorola issue #559 ties the exact XT2135-2 firmware build to this tag. The tag resolves to commit f6673a1302e3b9ca84c54e956ad4075d676fdf59 (Linux 4.14.190); the source tree contains ARM64 HANOIP overlays, an SDMMAGPIE SoC description, and ARMv8 CPU nodes.",
       "limitations": "Tag is unsigned. Source inspection does not establish retail SoC marketing name or silicon revision, the exact EVT/DVT board in a particular handset, UEFI/boot-chain behavior, or XNU support. Review each file's license before reuse."
-    },
-    {
-      "id": "motorola-hanoip-kernel-release",
-      "title": "Motorola kernel-msm Hanoip Android 12 source release",
-      "url": "https://github.com/MotorolaMobilityLLC/kernel-msm/tree/MMI-S2RIS32.32-20-9-9-2-1",
-      "category": "manufacturer-source-release",
-      "confidence": "primary-source",
-      "supports": "Motorola contributor links this tag from issue #559, whose request identifies the XT2135-2 HANOIP RETEU Android 12 build. The tag contains Hanoip-specific ARM64 device-tree overlays and a Hanoip kernel configuration fragment; the SDMMAGPIE DTS identifies the Qualcomm platform and ARMv8 CPU nodes.",
-      "limitations": "Does not prove the exact commercial SoC SKU, individual board revision, UEFI availability, XNU compatibility, or bootability. Per-file license review is required before any source reuse."
     }
   ]
 }
