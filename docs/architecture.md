@@ -53,3 +53,8 @@ The menu must never imply that Android recovery is guaranteed. No code in this r
 - Circumventing activation, signatures, encryption, or access controls.
 - Redistributing proprietary iOS firmware or user-space images.
 - Claiming compatibility before repeatable evidence exists.
+
+
+## XNU bootstrap research status
+
+The first-pass XNU ARM64 bootstrap requirements are documented in [xnu-arm64-bootstrap-requirements.md](xnu-arm64-bootstrap-requirements.md). The note identifies the expected boot handoff and platform services but does not claim that Motorola HANOIP supplies an XNU-compatible interface.
