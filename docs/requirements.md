@@ -9,6 +9,7 @@ This document records the project's requested starting environment. It does not 
 | Host | Windows 10/11 | Version/build to record during setup |
 | Linux environment | WSL2 | Distribution and kernel version to record |
 | RAM | 6 GB | Planning minimum only; large source builds may need more |
+| Python | 3.9+ | Standard-library-only host metadata checker and unit tests |
 | Storage | TBD | Measure checkout and build needs before setting a number |
 | Toolchain | TBD | Select after source and build requirements are reviewed |
 
