@@ -14,15 +14,18 @@ This roadmap tracks research and implementation gates. A milestone is complete o
 
 - [ ] Verify the exact XT2135-2 board revision and regional variant.
 - [ ] Confirm the SoC and silicon revision from model-matched sources.
-- [ ] Confirm the `hanoip` family mapping for this exact variant.
+- [ ] Confirm the hanoip mapping for this exact variant (family-level association is documented).
 - [ ] Inventory memory, CPU features, interrupt controller, timers and buses.
-- [ ] Record each finding in `devices/moto-g60/board-facts.md` and `docs/compatibility.md`.
+- [x] Add a structured subsystem inventory with explicit unknown/evidence states.
+- [ ] Replace unknown inventory values only when model-matched evidence is reviewed.
+- [ ] Record each finding in devices/moto-g60/board-facts.md and docs/compatibility.md.
 
 ## Phase 2 — public source analysis
 
 - [ ] Identify the Motorola kernel-source release matching the target software build.
 - [ ] Review device-tree and board configuration files without importing vendor binaries.
-- [ ] Record source tags/commits and licenses in `docs/research-sources.md`.
+- [ ] Record source tags/commits and licenses in docs/research-sources.md.
+- [ ] Complete a source review note using docs/source-review-template.md.
 - [ ] Map relevant Linux hardware drivers to the hardware inventory.
 
 ## Phase 3 — XNU feasibility study
@@ -31,13 +34,18 @@ This roadmap tracks research and implementation gates. A milestone is complete o
 - [ ] Identify platform-expert and interrupt/timer dependencies.
 - [ ] Separate reusable architecture code from Apple-specific platform code.
 - [ ] Write a gap analysis for every required platform service.
+- [ ] Complete docs/xnu-porting-checklist.md with linked evidence.
 - [ ] Decide whether the target is technically feasible before any loader implementation.
 
 ## Phase 4 — host-side engineering
 
-- [ ] Keep source inspection and configuration checks reproducible in WSL2.
-- [x] Add host-side metadata validation and unit tests (4 tests pass locally).
+- [x] Keep source inspection and configuration checks reproducible in WSL2.
+- [x] Add host-side device metadata validation and unit tests.
+- [x] Add a structured hardware inventory and host-side validator.
+- [x] Add a Makefile entry point for repeatable validation and tests.
+- [x] Add CI to run host-only checks on Python 3.11 and 3.12.
 - [x] Keep the boot-menu demo clearly labelled as a mock-up.
+- [ ] Run make check in a local WSL2 environment and record the result.
 - [ ] Do not claim device support based on compilation alone.
 
 ## Device experimentation gate
