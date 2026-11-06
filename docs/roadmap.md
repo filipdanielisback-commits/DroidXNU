@@ -36,8 +36,8 @@ This roadmap tracks research and implementation gates. A milestone is complete o
 ## Phase 4 — host-side engineering
 
 - [ ] Keep source inspection and configuration checks reproducible in WSL2.
-- [ ] Add tests for host-side utilities.
-- [ ] Keep the boot-menu demo clearly labelled as a mock-up.
+- [x] Add host-side metadata validation and unit tests (4 tests pass locally).
+- [x] Keep the boot-menu demo clearly labelled as a mock-up.
 - [ ] Do not claim device support based on compilation alone.
 
 ## Device experimentation gate
