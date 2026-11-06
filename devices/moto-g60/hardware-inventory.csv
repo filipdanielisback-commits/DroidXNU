@@ -1,6 +1,6 @@
 subsystem,status,reported_value,evidence,open_question
 device_family,family-reported,hanoip,https://github.com/moto-common/android_device_motorola_targets,Does the family mapping identify XT2135-2 specifically?
-soc,family-reported,"Snapdragon 732G / SM7150 family (reported)",https://github.com/motorola-sm6150-devs/device_motorola_hanoip,What exact SoC and silicon revision are used by this regional model?
+soc,family-reported,"Motorola HANOIP / SDMMAGPIE kernel platform confirmed in matching public source release; Snapdragon 732G / SM7150 marketing-family mapping remains unverified for this exact variant",https://github.com/MotorolaMobilityLLC/kernel-msm/tree/MMI-S2RIS32.32-20-9-9-2-1,What exact SoC part number and silicon revision are used by XT2135-2?
 cpu_architecture,unknown,Unknown,,What CPU architecture and features are documented for the exact board?
 memory,unknown,Unknown,,What memory configuration and usable memory map are documented?
 interrupt_controller,unknown,Unknown,,Which interrupt controller and configuration are used?
