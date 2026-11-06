@@ -31,7 +31,7 @@ These are not proof that the phone can boot XNU. Device compatibility depends on
 - boot-menu/ — boot-menu specification and a harmless host-side menu mock-up.
 - devices/moto-g60/ — device facts, structured hardware inventory and compatibility status.
 - drivers/ — future, independently developed driver work and research matrix.
-- tools/ — host-only metadata validators and unit tests.
+- tools/ — host-only metadata validators, research report generator and unit tests.
 - .github/workflows/host-checks.yml — repository-only validation and tests in CI.
 
 ## Host-side checks
@@ -83,7 +83,7 @@ The current host mock-up only prints menu choices. It does not access EFI servic
 - [Public hanoip Android device tree](https://github.com/motorola-sm6150-devs/device_motorola_hanoip)
 - [Moto Common Motorola target index](https://github.com/moto-common/android_device_motorola_targets)
 - [Motorola kernel source release discussion for XT2135-2](https://github.com/MotorolaMobilityLLC/kernel-msm/issues/559)
-- [Apple XNU source](https://github.com/apple-oss-distributions/xnu)
+- [Structured source register](docs/research-sources.json)\n- [Apple XNU source](https://github.com/apple-oss-distributions/xnu)
 - [Apple distribution-iOS source tree supplied for research](https://github.com/apple-oss-distributions/distribution-iOS/tree/ios-260)
 - [HakiOS reference project](https://github.com/oosexgang/hakios-xnu-kernel)
 
