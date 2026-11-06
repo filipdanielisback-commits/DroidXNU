@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "description": "Curated public-reference metadata. URLs are recorded, not fetched or verified by the toolkit.",
+  "sources": [
+    {
+      "id": "motorola-xt2135-2-declaration",
+      "title": "Motorola XT2135-2 Declaration of Conformity",
+      "url": "https://en-us.support.motorola.com/ci/fattach/get/79315385/1664922506/redirect/1/filename/XT2135-2_Moto%2BG60%2BVision%2BMC38C%2BRED%2BDoC.pdf",
+      "category": "manufacturer",
+      "confidence": "primary-source",
+      "supports": "Moto G60 model XT2135-2 and type MC38C",
+      "limitations": "Does not establish SoC, board revision, UEFI, or XNU support."
+    },
+    {
+      "id": "hanoip-device-tree",
+      "title": "hanoip Android device tree",
+      "url": "https://github.com/motorola-sm6150-devs/device_motorola_hanoip",
+      "category": "device-source",
+      "confidence": "community-reported",
+      "supports": "Android device-tree work associated with the Moto G40 Fusion / Moto G60 family",
+      "limitations": "Does not prove exact compatibility of every variant or XNU support."
+    },
+    {
+      "id": "moto-common-target-index",
+      "title": "Moto Common Motorola target index",
+      "url": "https://github.com/moto-common/android_device_motorola_targets",
+      "category": "device-index",
+      "confidence": "community-reported",
+      "supports": "Lists hanoip for the Moto G40 Fusion / Moto G60 family; archived index records the target as dropped.",
+      "limitations": "Does not establish exact XT2135-2 board equivalence or current support."
+    },
+    {
+      "id": "motorola-kernel-source-issue-559",
+      "title": "Motorola kernel-msm issue 559",
+      "url": "https://github.com/MotorolaMobilityLLC/kernel-msm/issues/559",
+      "category": "source-publication",
+      "confidence": "primary-source",
+      "supports": "Motorola contributor points to a published source release for an XT2135-2 build.",
+      "limitations": "Does not prove the source is sufficient to boot XNU."
+    },
+    {
+      "id": "android-device-tree-docs",
+      "title": "Android device-tree overlay documentation",
+      "url": "https://source.android.com/docs/core/architecture/dto",
+      "category": "platform-documentation",
+      "confidence": "primary-source",
+      "supports": "General purpose and use of DT / DTBO in Android boot flows.",
+      "limitations": "Does not establish the exact Moto G60 device-tree contents."
+    },
+    {
+      "id": "apple-xnu",
+      "title": "Apple XNU source repository",
+      "url": "https://github.com/apple-oss-distributions/xnu",
+      "category": "upstream-source",
+      "confidence": "primary-source",
+      "supports": "Public source for the XNU kernel.",
+      "limitations": "Does not provide a ready-made third-party Moto G60 platform port."
+    },
+    {
+      "id": "apple-distribution-ios-260",
+      "title": "Apple distribution-iOS ios-260 source tree",
+      "url": "https://github.com/apple-oss-distributions/distribution-iOS/tree/ios-260",
+      "category": "upstream-source",
+      "confidence": "primary-source",
+      "supports": "Material supplied for research under its own repository and file licenses.",
+      "limitations": "Does not represent a complete, installable iOS 26 image for Moto G60."
+    },
+    {
+      "id": "hakios-reference",
+      "title": "HakiOS reference project",
+      "url": "https://github.com/oosexgang/hakios-xnu-kernel",
+      "category": "independent-project",
+      "confidence": "third-party-reference",
+      "supports": "An independent example of a layered XNU research repository.",
+      "limitations": "Does not prove Moto G60 support and is not code to copy without license review."
+    }
+  ]
+}
