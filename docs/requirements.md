@@ -9,27 +9,29 @@ This document records the project's requested starting environment. It does not 
 | Host | Windows 10/11 | Version/build to record during setup |
 | Linux environment | WSL2 | Distribution and kernel version to record |
 | RAM | 6 GB | Planning minimum only; large source builds may need more |
-| Storage | TBD | Measure checkout, build and QEMU image needs before setting a number |
-| Toolchain | TBD | Select only after the first QEMU target is defined |
-| Emulator | QEMU | Initial experiments should remain off-device |
+| Storage | TBD | Measure checkout and build needs before setting a number |
+| Toolchain | TBD | Select after source and build requirements are reviewed |
 
 ## Device requirements (research target)
 
 | Requirement | Target | Verification |
 |---|---|---|
-| Manufacturer/model | Motorola Moto G60 | User-specified target |
-| Model number | XT2135-2 | Confirm from device settings/label |
-| Bootloader state | Unlocked | User-specified condition; not a guarantee of compatibility |
-| CPU architecture | ARM64/AArch64 | Verify against reliable device/SoC documentation |
-| SoC and board revision | TBD | Must be established before any port |
-| RAM | Device-specific | Record actual reported memory |
+| Manufacturer/model | Motorola Moto G60 | Confirmed by Motorola declaration |
+| Model number | XT2135-2 | Confirmed by Motorola declaration |
+| Device family codename | hanoip | Public Android device-tree reference; exact mapping still to verify |
+| Bootloader state | Unlocked | User-requested condition; not a guarantee of compatibility |
+| CPU architecture | ARM64/AArch64 | Verify against reliable SoC/device documentation |
+| SoC and board revision | Reported SM7150 / Snapdragon 732G family; revision TBD | Verify for this exact regional model |
+| RAM | Device-specific | Record actual reported memory; 6 GB is a host planning target, not device evidence |
 | Display, touch, storage, USB, Wi-Fi, audio, sensors | TBD | Each needs separate hardware research and driver status |
 
 ## Technical prerequisites still unknown
 
-- Exact SoC identifier and board revision for XT2135-2.
-- Available public device-tree and kernel-source information.
+- Exact SoC identifier, silicon revision, and board revision for XT2135-2.
+- Exact mapping between this regional model and the public `hanoip` device tree.
+- Available public device-tree and kernel-source information, including matching release tags.
 - Boot ROM / bootloader chain and supported boot image formats.
+- Whether native EFI exists; do not assume Android boot firmware implements UEFI.
 - Exception level, memory map, page-table assumptions and cache coherency.
 - Interrupt controller, timer, serial console and watchdog.
 - Storage controller, display pipeline, touch controller and power management.
@@ -41,4 +43,4 @@ XNU is a kernel, not a complete iOS installation. A working operating-system env
 
 ## Acceptance rule
 
-A requirement becomes **verified** only when a source, test result, or reproducible observation is recorded in `docs/compatibility.md`. Do not label the Moto G60 supported merely because it is ARM64 or has an unlocked bootloader.
+A requirement becomes **verified** only when a source, test result, or reproducible observation is recorded in `docs/compatibility.md`. Do not label the Moto G60 supported merely because it belongs to an ARM64-capable product family or has an unlocked bootloader.
