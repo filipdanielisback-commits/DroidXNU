@@ -2,7 +2,7 @@
 
 **Review date:** 2026-11-06  
 **Target:** Motorola Moto G60 XT2135-2 / HANOIP software target  
-**Evidence baseline:** Motorola kernel tag `MMI-S2RIS32.32-20-9-9-2-1`; Apple XNU ARM64 source review  
+**Evidence baseline:** Motorola kernel tag `MMI-S2RIS32.32-20-9-9-2-1`; Apple XNU commit `f6217f891ac0bb64f3d375211650a4c1ff8ca1ea` (`xnu-12377.1.9`)  
 **Status:** preliminary research gap analysis, not an implementation plan or bootability claim.
 
 ## Status scale
@@ -52,9 +52,9 @@ The most fundamental blockers are the undocumented XNU-compatible boot handoff, 
 
 ## Sources
 
-- [XNU ARM64 startup](https://github.com/apple-oss-distributions/xnu/blob/main/osfmk/arm64/start.s)
-- [XNU ARM platform initialization](https://github.com/apple-oss-distributions/xnu/blob/main/pexpert/arm/pe_init.c)
-- [XNU ARM machine identification](https://github.com/apple-oss-distributions/xnu/blob/main/pexpert/arm/pe_identify_machine.c)
+- [XNU ARM64 startup](https://github.com/apple-oss-distributions/xnu/blob/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/osfmk/arm64/start.s)
+- [XNU ARM platform initialization](https://github.com/apple-oss-distributions/xnu/blob/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/pexpert/arm/pe_init.c)
+- [XNU ARM machine identification](https://github.com/apple-oss-distributions/xnu/blob/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/pexpert/arm/pe_identify_machine.c)
 - [Motorola SDMMAGPIE base DTS](https://github.com/MotorolaMobilityLLC/kernel-msm/blob/MMI-S2RIS32.32-20-9-9-2-1/arch/arm64/boot/dts/qcom/sdmmagpie.dtsi)
 - [Motorola HANOIP common overlay](https://github.com/MotorolaMobilityLLC/kernel-msm/blob/MMI-S2RIS32.32-20-9-9-2-1/arch/arm64/boot/dts/qcom/sdmmagpie-hanoip-common-overlay.dtsi)
 - [Motorola HANOIP source review](source-review-motorola-hanoip.md)
