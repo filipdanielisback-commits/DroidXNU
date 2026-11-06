@@ -54,3 +54,15 @@ All paths below are in the tagged Motorola source tree at commit `f6673a1302e3b9
 - [Tagged source commit](https://github.com/MotorolaMobilityLLC/kernel-msm/commit/f6673a1302e3b9ca84c54e956ad4075d676fdf59)
 - [HANOIP kernel configuration](https://github.com/MotorolaMobilityLLC/kernel-msm/blob/MMI-S2RIS32.32-20-9-9-2-1/arch/arm64/configs/vendor/ext_config/moto-sdmmagpie-hanoip.config)
 - [HANOIP common overlay](https://github.com/MotorolaMobilityLLC/kernel-msm/blob/MMI-S2RIS32.32-20-9-9-2-1/arch/arm64/boot/dts/qcom/sdmmagpie-hanoip-common-overlay.dtsi)
+
+## Device-tree build selection evidence
+
+The tagged kernel tree's `arch/arm64/boot/dts/qcom/Makefile` associates `CONFIG_HANOIP_DTB` with three HANOIP overlay outputs:
+
+- `sdmmagpie-hanoip-evt1-overlay.dtbo`
+- `sdmmagpie-hanoip-dvt1-overlay.dtbo`
+- `sdmmagpie-hanoip-dvt2-overlay.dtbo`
+
+The Makefile sets each overlay's base to `sdmmagpie-hanoi-base.dtb`. The base file `sdmmagpie-hanoi-base.dts` includes `sdmmagpie-moto-base.dtsi`. The HANOIP common overlay includes the HANOIP sensor overlay plus shared display, audio, battery/thermal and touchscreen overlay files.
+
+This establishes the source tree's candidate base/overlay relationships. It does **not** identify which hardware revision or DTBO combination was selected for the XT2135-2 European firmware build. The exact selected DTBO remains unknown without build-specific product configuration or authoritative firmware metadata.
