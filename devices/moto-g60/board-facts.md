@@ -32,5 +32,6 @@ This file distinguishes manufacturer-confirmed identity from model-linked source
 - The Motorola issue and tagged source provide a model-linked Hanoip software target. They do not identify the physical board revision of an individual unit.
 - The reviewed source identifies the Qualcomm SDMMAGPIE platform and ARMv8 CPU nodes. It does not establish the commercial SoC SKU, so the Snapdragon 732G / SM7150 claim remains a separate community-reported lead.
 - The source repository's `COPYING` file contains GPL version 2 terms; individual files may have additional or different notices. Review licenses per file before reuse.
+- The matching kernel tree identifies the Qualcomm SDMMAGPIE device-tree platform and ARMv8 CPU nodes. This does not independently verify the retail SoC marketing name or silicon revision.
 - A published Android/Linux kernel source tree is valuable hardware documentation, but it is not an XNU port.
 - A device having an Android bootloader does not establish that it has a UEFI environment.
