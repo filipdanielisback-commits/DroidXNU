@@ -13,8 +13,9 @@ This roadmap tracks research and implementation gates. A milestone is complete o
 ## Phase 1 — exact hardware identity
 
 - [ ] Verify the exact XT2135-2 board revision and regional variant.
-- [ ] Confirm the SoC and silicon revision from model-matched sources.
-- [ ] Confirm the hanoip mapping for this exact variant (family-level association is documented).
+- [x] Identify the Qualcomm SDMMAGPIE platform from the model-linked Motorola device tree.
+- [ ] Confirm the commercial SoC SKU and silicon revision from model-matched sources.
+- [x] Corroborate the XT2135-2 HANOIP software target using Motorola issue #559 and its linked source tag.
 - [ ] Inventory memory, CPU features, interrupt controller, timers and buses.
 - [x] Add a structured subsystem inventory with explicit unknown/evidence states.
 - [ ] Replace unknown inventory values only when model-matched evidence is reviewed.
@@ -22,9 +23,9 @@ This roadmap tracks research and implementation gates. A milestone is complete o
 
 ## Phase 2 — public source analysis
 
-- [ ] Identify the Motorola kernel-source release matching the target software build.
-- [ ] Review device-tree and board configuration files without importing vendor binaries.
-- [ ] Record source tags/commits and licenses in docs/research-sources.md.
+- [x] Identify the Motorola kernel-source release linked to the XT2135-2 HANOIP RETEU Android 12 build.
+- [x] Review Hanoip ARM64 config and device-tree source files without importing vendor binaries.
+- [x] Record source tag, paths, provenance and license caveats in docs/research-sources.md and docs/source-review-motorola-hanoip.md.
 - [ ] Complete a source review note using docs/source-review-template.md.
 - [ ] Map relevant Linux hardware drivers to the hardware inventory.
 
