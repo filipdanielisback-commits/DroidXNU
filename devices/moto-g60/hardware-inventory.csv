@@ -1,0 +1,17 @@
+subsystem,status,reported_value,evidence,open_question
+device_family,family-reported,hanoip,https://github.com/moto-common/android_device_motorola_targets,Does the family mapping identify XT2135-2 specifically?
+soc,family-reported,"Snapdragon 732G / SM7150 family (reported)",https://github.com/motorola-sm6150-devs/device_motorola_hanoip,What exact SoC and silicon revision are used by this regional model?
+cpu_architecture,unknown,Unknown,,What CPU architecture and features are documented for the exact board?
+memory,unknown,Unknown,,What memory configuration and usable memory map are documented?
+interrupt_controller,unknown,Unknown,,Which interrupt controller and configuration are used?
+timers,unknown,Unknown,,Which architectural and platform timers are available?
+boot_chain,unknown,Unknown,,What are the documented boot stages and image formats?
+efi_environment,unknown,Unknown,,Is any EFI protocol environment present or is another interface used?
+storage,unknown,Unknown,,Which storage controller and documented interfaces are present?
+display_gpu,unknown,Unknown,,Which display pipeline GPU and panel components are present?
+touch,unknown,Unknown,,Which touch controller and protocol are used?
+usb,unknown,Unknown,,Which USB controller and supported roles are documented?
+wifi_bluetooth,unknown,Unknown,,Which wireless components and licensing constraints apply?
+audio,unknown,Unknown,,Which audio codec and routing components are documented?
+sensors,unknown,Unknown,,Which sensors and buses are present?
+power_thermal,unknown,Unknown,,Which power charging and thermal controllers are documented?
