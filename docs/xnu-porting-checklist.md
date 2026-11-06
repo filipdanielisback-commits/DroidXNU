@@ -4,19 +4,19 @@
 
 ## Gate A — source provenance
 
-- [ ] Record the exact XNU repository, branch/tag, commit and retrieval date.
+- [x] Record the exact XNU repository, branch and commit for this first-pass review (2026-11-06; `f6217f891ac0bb64f3d375211650a4c1ff8ca1ea`).
 - [ ] Record licenses and copyright notices for every file proposed for reuse.
-- [ ] Identify ARM64 architecture code separately from Apple platform code.
+- [x] Identify ARM64 architecture code separately from Apple platform code in [xnu-layer-separation.md](xnu-layer-separation.md).
 - [ ] Record unavailable or proprietary dependencies explicitly.
 
 ## Gate B — bootstrap and platform study
 
-- [ ] Document the expected entry conditions for the selected XNU ARM64 configuration.
+- [x] Document first-pass expected entry conditions in [xnu-arm64-bootstrap-requirements.md](xnu-arm64-bootstrap-requirements.md); exact target configuration still needs selection.
 - [ ] Document exception-level and CPU feature assumptions.
 - [ ] Document MMU, page-table, cache and memory-allocation assumptions.
 - [ ] Identify early console and diagnostic requirements.
-- [ ] Identify platform expert initialization boundaries.
-- [ ] Identify interrupt-controller and timer interfaces.
+- [x] Identify first-pass platform expert initialization boundaries in [xnu-arm64-bootstrap-requirements.md](xnu-arm64-bootstrap-requirements.md).
+- [x] Identify first-pass interrupt-controller and timer interfaces; HANOIP compatibility remains unknown.
 - [ ] Record unknowns rather than filling gaps with guesses.
 
 ## Gate C — Moto G60 evidence
@@ -33,7 +33,7 @@
 
 For each required service, record available, adaptable, blocked or unknown.
 
-- [ ] Complete a service-by-service gap analysis.
+- [x] Complete a preliminary service-by-service gap analysis in [xnu-platform-gap-analysis.md](xnu-platform-gap-analysis.md); many entries remain unknown.
 - [ ] Identify dependencies requiring new project-owned code.
 - [ ] Review licensing and redistribution constraints.
 - [ ] Review whether a separate user environment is technically and legally available.
