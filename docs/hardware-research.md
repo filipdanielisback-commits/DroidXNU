@@ -45,7 +45,7 @@ This is a research plan, not a device modification guide. Keep work to public do
 
 For each device component, record its exact controller, source evidence, Linux driver references (if any), XNU equivalent requirements, and current confidence.
 
-The structured inventory is stored in devices/moto-g60/hardware-inventory.csv. Validate it with python3 tools/validate_hardware_inventory.py. Unknown values remain explicitly unknown until model-matched evidence is reviewed.
+The structured inventory is stored in devices/moto-g60/hardware-inventory.csv. The reviewed Linux driver areas and their evidence limitations are summarized in [linux-driver-map-motorola-hanoip.md](linux-driver-map-motorola-hanoip.md). Validate it with python3 tools/validate_hardware_inventory.py. Unknown values remain explicitly unknown until model-matched evidence is reviewed.
 
 ### 5. XNU feasibility
 
