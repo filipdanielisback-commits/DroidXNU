@@ -56,7 +56,7 @@ class ResearchReportTests(unittest.TestCase):
     def test_rejects_unknown_inventory_status(self) -> None:
         inventory_path = ROOT / "devices/moto-g60/hardware-inventory.csv"
         text = inventory_path.read_text(encoding="utf-8").replace(
-            "device_family,family-reported", "device_family,unverified"
+            "device_family,model-confirmed", "device_family,unverified"
         )
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "inventory.csv"
