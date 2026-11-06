@@ -21,3 +21,11 @@ This register tracks public references used by DroidXNU. It records what each so
 - Do not copy code until its license and compatibility with this repository are reviewed.
 - Mark third-party device information as community-reported unless confirmed by Motorola or a model-matched primary source.
 - Do not commit proprietary firmware, vendor blobs, private keys, credentials or Apple system images.
+
+
+## Motorola HANOIP kernel release
+
+- [Motorola HANOIP Android 12 kernel source tag](https://github.com/MotorolaMobilityLLC/kernel-msm/tree/MMI-S2RIS32.32-20-9-9-2-1)
+- [Motorola source request #559](https://github.com/MotorolaMobilityLLC/kernel-msm/issues/559) ties the XT2135-2 Moto G60 firmware build ID to this published tag.
+- Detailed file review: [Motorola kernel source review](motorola-kernel-source-review.md).
+- The source contains ARM64 HANOIP/SDMMAGPIE configuration and device-tree overlays. This is evidence about the Linux platform source, not proof of EFI or XNU compatibility.
