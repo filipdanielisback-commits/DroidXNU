@@ -31,8 +31,8 @@ This roadmap tracks research and implementation gates. A milestone is complete o
 
 ## Phase 3 — XNU feasibility study
 
-- [ ] Map XNU ARM64 bootstrap requirements.
-- [ ] Identify platform-expert and interrupt/timer dependencies.
+- [x] Map first-pass XNU ARM64 bootstrap requirements in docs/xnu-arm64-bootstrap-requirements.md.
+- [x] Identify first-pass platform-expert, interrupt-controller and timer dependencies; hardware compatibility remains unverified.
 - [ ] Separate reusable architecture code from Apple-specific platform code.
 - [ ] Write a gap analysis for every required platform service.
 - [ ] Complete docs/xnu-porting-checklist.md with linked evidence.
