@@ -82,6 +82,15 @@
       "confidence": "primary-source",
       "supports": "Motorola issue #559 ties XT2135-2 Moto G60 firmware build S2RIS32.32-20-9-9-2-1 to a Motorola-published HANOIP Android 12 kernel tag. Tagged tree contains ARM64 HANOIP/SDMMAGPIE kernel configuration and device-tree overlays.",
       "limitations": "Does not prove all XT2135-2 variants share identical hardware, identify every silicon detail, establish EFI/boot-chain behavior, or demonstrate XNU support. Inspect individual file licenses before reuse."
+    },
+    {
+      "id": "motorola-hanoip-kernel-release",
+      "title": "Motorola kernel-msm Hanoip Android 12 source release",
+      "url": "https://github.com/MotorolaMobilityLLC/kernel-msm/tree/MMI-S2RIS32.32-20-9-9-2-1",
+      "category": "manufacturer-source-release",
+      "confidence": "primary-source",
+      "supports": "Motorola contributor links this tag from issue #559, whose request identifies the XT2135-2 HANOIP RETEU Android 12 build. The tag contains Hanoip-specific ARM64 device-tree overlays and a Hanoip kernel configuration fragment; the SDMMAGPIE DTS identifies the Qualcomm platform and ARMv8 CPU nodes.",
+      "limitations": "Does not prove the exact commercial SoC SKU, individual board revision, UEFI availability, XNU compatibility, or bootability. Per-file license review is required before any source reuse."
     }
   ]
 }
