@@ -34,7 +34,7 @@ This roadmap tracks research and implementation gates. A milestone is complete o
 - [x] Map first-pass XNU ARM64 bootstrap requirements in docs/xnu-arm64-bootstrap-requirements.md.
 - [x] Identify first-pass platform-expert, interrupt-controller and timer dependencies; hardware compatibility remains unverified.
 - [x] Separate architecture-level XNU references from platform-specific integration requirements in docs/xnu-layer-separation.md.
-- [ ] Write a gap analysis for every required platform service.
+- [x] Write a preliminary evidence-backed gap analysis for required platform services in docs/xnu-platform-gap-analysis.md.
 - [ ] Complete docs/xnu-porting-checklist.md with linked evidence.
 - [ ] Decide whether the target is technically feasible before any loader implementation.
 
