@@ -23,8 +23,9 @@ DroidXNU/
 ├── drivers/         # future project-owned drivers
 ├── kernel/
 │   └── xnu/         # future source integration / patch notes
-└── loader/
-    └── efi/         # loader / EFI feasibility research
+├── loader/
+│   └── efi/         # loader / EFI feasibility research
+└── tools/           # host-only metadata validation and tests
 ```
 
 ## Boot menu goals
