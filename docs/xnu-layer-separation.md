@@ -1,7 +1,7 @@
 # XNU architecture versus platform-specific code
 
 **Review date:** 2026-11-06  
-**Basis:** Apple XNU README and ARM64 startup / platform-expert source paths reviewed for the first feasibility pass.  
+**Basis:** Apple XNU README and ARM64 startup / platform-expert source paths reviewed at commit `f6217f891ac0bb64f3d375211650a4c1ff8ca1ea` (`xnu-12377.1.9`).  
 **Scope:** conceptual source-tree classification; no code copied or modified.
 
 ## Why this separation matters
@@ -48,9 +48,9 @@ The project should therefore treat `osfmk/arm64` as a source of architecture-lev
 
 ## Sources
 
-- [Apple XNU README](https://github.com/apple-oss-distributions/xnu/blob/main/README.md)
-- [XNU ARM64 startup](https://github.com/apple-oss-distributions/xnu/blob/main/osfmk/arm64/start.s)
-- [XNU ARM platform initialization](https://github.com/apple-oss-distributions/xnu/blob/main/pexpert/arm/pe_init.c)
-- [XNU ARM machine identification](https://github.com/apple-oss-distributions/xnu/blob/main/pexpert/arm/pe_identify_machine.c)
+- [Apple XNU README](https://github.com/apple-oss-distributions/xnu/blob/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/README.md)
+- [XNU ARM64 startup](https://github.com/apple-oss-distributions/xnu/blob/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/osfmk/arm64/start.s)
+- [XNU ARM platform initialization](https://github.com/apple-oss-distributions/xnu/blob/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/pexpert/arm/pe_init.c)
+- [XNU ARM machine identification](https://github.com/apple-oss-distributions/xnu/blob/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/pexpert/arm/pe_identify_machine.c)
 - [Motorola HANOIP source review](source-review-motorola-hanoip.md)
 - [XNU ARM64 bootstrap requirements](xnu-arm64-bootstrap-requirements.md)
