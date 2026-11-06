@@ -46,3 +46,8 @@ Completing this checklist does not authorize physical-device experiments. Any la
 ## Evidence rule
 
 A source file, successful compilation, or menu mock-up does not demonstrate hardware support. A working claim requires a reproducible test on the exact supported configuration and a reviewed record in the compatibility document.
+
+
+## First-pass bootstrap research
+
+See [xnu-arm64-bootstrap-requirements.md](xnu-arm64-bootstrap-requirements.md) for the initial source-backed review of ARM64 entry, boot arguments, CPU startup, device-tree, SoC identification, interrupt-controller, timer and console dependencies. This is a requirements note only; no port is implemented.
