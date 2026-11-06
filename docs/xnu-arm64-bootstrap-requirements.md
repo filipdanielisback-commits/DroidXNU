@@ -1,7 +1,7 @@
 # XNU ARM64 bootstrap and platform requirements — first-pass review
 
 **Review date:** 2026-11-06  
-**Upstream reviewed:** Apple `apple-oss-distributions/xnu`, branch `main`  
+**Upstream reviewed:** Apple `apple-oss-distributions/xnu`, branch `main`, resolved to commit `f6217f891ac0bb64f3d375211650a4c1ff8ca1ea` (`xnu-12377.1.9`)  
 **Target evidence:** Motorola HANOIP / SDMMAGPIE Android 12 source tag `MMI-S2RIS32.32-20-9-9-2-1`  
 **Scope:** public source reading only. No source copied, no kernel build, no bootloader changes, and no phone interaction.
 
@@ -56,11 +56,11 @@ What it does not yet prove:
 
 ### Apple XNU
 
-- [XNU README and architecture overview](https://github.com/apple-oss-distributions/xnu/blob/main/README.md)
-- [ARM64 startup and reset code — osfmk/arm64/start.s](https://github.com/apple-oss-distributions/xnu/blob/main/osfmk/arm64/start.s)
-- [ARM platform initialization — pexpert/arm/pe_init.c](https://github.com/apple-oss-distributions/xnu/blob/main/pexpert/arm/pe_init.c)
-- [ARM machine identification, interrupt-controller and timer mapping — pexpert/arm/pe_identify_machine.c](https://github.com/apple-oss-distributions/xnu/blob/main/pexpert/arm/pe_identify_machine.c)
-- [ARM boot-argument access — pexpert/arm/pe_bootargs.c](https://github.com/apple-oss-distributions/xnu/blob/main/pexpert/arm/pe_bootargs.c)
+- [XNU README and architecture overview](https://github.com/apple-oss-distributions/xnu/blob/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/README.md)
+- [ARM64 startup and reset code — osfmk/arm64/start.s](https://github.com/apple-oss-distributions/xnu/blob/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/osfmk/arm64/start.s)
+- [ARM platform initialization — pexpert/arm/pe_init.c](https://github.com/apple-oss-distributions/xnu/blob/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/pexpert/arm/pe_init.c)
+- [ARM machine identification, interrupt-controller and timer mapping — pexpert/arm/pe_identify_machine.c](https://github.com/apple-oss-distributions/xnu/blob/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/pexpert/arm/pe_identify_machine.c)
+- [ARM boot-argument access — pexpert/arm/pe_bootargs.c](https://github.com/apple-oss-distributions/xnu/blob/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/pexpert/arm/pe_bootargs.c)
 
 ### Motorola HANOIP
 
