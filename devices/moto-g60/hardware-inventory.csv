@@ -1,7 +1,7 @@
 subsystem,status,reported_value,evidence,open_question
-device_family,family-reported,hanoip,https://github.com/moto-common/android_device_motorola_targets,Does the family mapping identify XT2135-2 specifically?
-soc,family-reported,"Motorola HANOIP / SDMMAGPIE kernel platform confirmed in matching public source release; Snapdragon 732G / SM7150 marketing-family mapping remains unverified for this exact variant",https://github.com/MotorolaMobilityLLC/kernel-msm/tree/MMI-S2RIS32.32-20-9-9-2-1,What exact SoC part number and silicon revision are used by XT2135-2?
-cpu_architecture,unknown,Unknown,,What CPU architecture and features are documented for the exact board?
+device_family,model-confirmed,"hanoip (Motorola source tag linked to XT2135-2 HANOIP RETEU Android 12 build)",https://github.com/MotorolaMobilityLLC/kernel-msm/issues/559,Which physical board revision and regional hardware differences apply to this unit?
+soc,model-confirmed,"Qualcomm SDMMAGPIE platform in Motorola device tree; exact commercial SoC SKU and silicon revision remain unverified",https://github.com/MotorolaMobilityLLC/kernel-msm/blob/MMI-S2RIS32.32-20-9-9-2-1/arch/arm64/boot/dts/qcom/sdmmagpie.dtsi,Which exact SoC SKU and silicon revision are used by XT2135-2?
+cpu_architecture,model-confirmed,"ARMv8 / AArch64 (ARM64 Hanoip kernel config and device-tree CPU nodes)",https://github.com/MotorolaMobilityLLC/kernel-msm/blob/MMI-S2RIS32.32-20-9-9-2-1/arch/arm64/boot/dts/qcom/sdmmagpie.dtsi,Which specific CPU implementer features and exception-level capabilities must a future port support?
 memory,unknown,Unknown,,What memory configuration and usable memory map are documented?
 interrupt_controller,unknown,Unknown,,Which interrupt controller and configuration are used?
 timers,unknown,Unknown,,Which architectural and platform timers are available?
