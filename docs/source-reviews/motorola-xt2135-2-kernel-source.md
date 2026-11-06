@@ -1,49 +1,50 @@
-# Motorola XT2135-2 kernel-source publication review
+# Motorola XT2135-2 kernel-source review
 
 **Review date:** 2026-11-06  
-**Target:** Moto G60 XT2135-2, Android 12 software build `S2RIS32.32-20-9-9-2-1`  
-**Review type:** Public-source provenance check; source contents not yet audited.
+**Target firmware:** `XT2135-2_HANOIP_RETEU_12_S2RIS32.32-20-9-9-2-1`  
+**Motorola source tag:** `MMI-S2RIS32.32-20-9-9-2-1`  
+**Tag commit:** `f6673a1302e3b9ca84c54e956ad4075d676fdf59`  
+**Kernel base version:** Linux 4.14.190
 
-## Finding
+## Result
 
-Motorola's public `kernel-msm` issue #559 is explicitly a request for the Moto G60 kernel source associated with firmware:
+The source tag is located and inspected. Motorola issue #559 requests kernel source for the exact XT2135-2 Android 12 firmware build above. A Motorola contributor replied that the code was released and linked the tag. The Git tag is present and its source tree is accessible, even though the GitHub Releases API does not currently return a release object for that tag.
 
-`XT2135-2_HANOIP_RETEU_12_S2RIS32.32-20-9-9-2-1_subsidy-DEFAULT_regulatory-XT2135-2-EUROPE_CFC.xml.zip`
+The annotated tag message is `Hanoip push for Android 12`. The tag object points to commit `f6673a1302e3b9ca84c54e956ad4075d676fdf59`. GitHub reports the tag as unsigned; the commit's committer is a Motorola contributor. Record provenance, but do not describe the tag as cryptographically verified.
 
-The issue was closed with the `published` label. A Motorola contributor replied on 2023-11-29:
+## Confirmed from the matching source tree
 
-> Code released: https://github.com/MotorolaMobilityLLC/kernel-msm/releases/tag/MMI-S2RIS32.32-20-9-9-2-1
+1. **HANOIP model family:** the source tree contains HANOIP device-tree overlays. For example, `sdmmagpie-hanoip-dvt1-overlay.dts` sets `model = "hanoip"`; DVT1, DVT2 and EVT1 overlay files are present. The source tag is tied by Motorola's issue to the XT2135-2 firmware build. This upgrades HANOIP from a broad family-only lead to a model/build-matched source association. It does not identify which board revision is in a particular handset.
+2. **ARM64 / ARMv8:** the HANOIP base tree is under `arch/arm64/boot/dts/qcom`. Its include chain reaches `sdmmagpie.dtsi`, which describes CPU nodes with `compatible = "arm,armv8"`. The common SoC description contains eight CPU nodes. This is model/build-matched kernel evidence for an ARMv8 64-bit platform.
+3. **Qualcomm platform identifier:** the same include chain identifies the SoC platform as `qcom,sdmmagpie` / `SDMMAGPIE`. Treat that as the kernel device-tree platform identifier. The consumer-facing chip name and silicon revision are not established by this inspection alone.
+4. **Device-tree organization:** HANOIP DVT/EVT overlays are listed in the QCOM device-tree Makefile and are based on `sdmmagpie-hanoi-base.dtb`. The common overlay references display, battery/thermal, sensor, touch and audio fragments.
+5. **Boot-interface clue:** the SoC description includes PSCI 1.0 with the SMC conduit and Android firmware metadata. These are Linux device-tree descriptions, not proof of UEFI. No UEFI protocol environment is established here.
+6. **Kernel version:** the tagged root Makefile identifies Linux 4.14.190.
 
-This is strong primary-source evidence that Motorola announced a matching kernel-source publication for the exact XT2135-2 software build.
+## Licensing and reuse
 
-## Access and verification limitation
+The tagged tree's root `COPYING` contains GNU GPL version 2. The inspected HANOIP device-tree source files carry headers specifying GPL version 2 only. This is useful provenance for those files, but it is not a substitute for checking the license and copyright header of every file before any reuse. No Motorola source code or binary was copied into DroidXNU during this review.
 
-On 2026-11-06, the linked GitHub release could not be retrieved through the public release endpoint (HTTP 404 / not found), and the repository's release listing returned no releases. The repository's default branch is `android-13-release-ttz`, which is not evidence that it matches the Android 12 build above.
+## Still unknown
 
-Therefore this review does **not** claim that the source archive was downloaded, that its contents were inspected, or that the matching source revision is currently available. Do not substitute the repository's default branch for the named release.
+- Exact retail SoC marketing name and silicon revision for XT2135-2.
+- Which EVT/DVT board overlay corresponds to the user's individual hardware revision.
+- Complete memory map and actual installed RAM configuration.
+- Full peripheral inventory and the exact enabled device-tree composition for the shipping XT2135-2 variant.
+- Bootloader stages, image acceptance rules, secure-boot state, and whether any UEFI interface exists.
+- Whether any Linux driver or firmware interface can be adapted to an XNU platform port.
+- Any XNU or iOS compatibility.
 
-## What this confirms
+## Source files reviewed
 
-- The source request names the exact model XT2135-2.
-- The requested firmware build is an Android 12 HANOIP RETEU build with identifier `S2RIS32.32-20-9-9-2-1`.
-- A Motorola contributor explicitly stated that code was released and supplied a release-tag URL.
-- The public repository is described by Motorola as Linux kernel source for MSM-based devices.
+- [Tag tree](https://github.com/MotorolaMobilityLLC/kernel-msm/tree/MMI-S2RIS32.32-20-9-9-2-1)
+- [Tag commit](https://github.com/MotorolaMobilityLLC/kernel-msm/commit/f6673a1302e3b9ca84c54e956ad4075d676fdf59)
+- [HANOIP DVT1 overlay](https://github.com/MotorolaMobilityLLC/kernel-msm/blob/MMI-S2RIS32.32-20-9-9-2-1/arch/arm64/boot/dts/qcom/sdmmagpie-hanoip-dvt1-overlay.dts)
+- [HANOIP common overlay](https://github.com/MotorolaMobilityLLC/kernel-msm/blob/MMI-S2RIS32.32-20-9-9-2-1/arch/arm64/boot/dts/qcom/sdmmagpie-hanoip-common-overlay.dtsi)
+- [HANOIP base device tree](https://github.com/MotorolaMobilityLLC/kernel-msm/blob/MMI-S2RIS32.32-20-9-9-2-1/arch/arm64/boot/dts/qcom/sdmmagpie-hanoi-base.dts)
+- [SDMMAGPIE SoC description](https://github.com/MotorolaMobilityLLC/kernel-msm/blob/MMI-S2RIS32.32-20-9-9-2-1/arch/arm64/boot/dts/qcom/sdmmagpie.dtsi)
+- [Kernel COPYING](https://github.com/MotorolaMobilityLLC/kernel-msm/blob/MMI-S2RIS32.32-20-9-9-2-1/COPYING)
 
-## What this does not confirm
+## Next research task
 
-- The precise SoC or silicon revision in this XT2135-2 unit.
-- Exact board revision, memory map, CPU feature set, interrupt controller, timers, or peripheral wiring.
-- That the named source release is currently downloadable or that the source archive has been inspected.
-- That all required device-tree files, vendor components, or firmware interfaces are included.
-- UEFI availability, boot-chain compatibility, or any XNU/iOS compatibility.
-
-## Next safe research action
-
-Locate an accessible, license-compatible copy of the exact Motorola release or a matching source commit using public repository metadata. Before using any code, record its exact tag/commit, top-level source contents, applicable license files, and whether its build identity matches the XT2135-2 firmware identifier above. Do not import source or binaries into DroidXNU until provenance and license review are complete.
-
-## References
-
-1. [Motorola kernel-msm issue #559](https://github.com/MotorolaMobilityLLC/kernel-msm/issues/559) — model and firmware request; closed with `published` label.
-2. [Motorola contributor's release announcement](https://github.com/MotorolaMobilityLLC/kernel-msm/issues/559#issuecomment-1831904688) — names release tag `MMI-S2RIS32.32-20-9-9-2-1`.
-3. [Announced release URL](https://github.com/MotorolaMobilityLLC/kernel-msm/releases/tag/MMI-S2RIS32.32-20-9-9-2-1) — currently not retrievable through the release endpoint at review time.
-4. [Motorola kernel-msm repository](https://github.com/MotorolaMobilityLLC/kernel-msm) — public Linux kernel repository; its current default branch must not be treated as the exact Android 12 release.
+Map the Linux drivers and device-tree nodes relevant to HANOIP onto DroidXNU's hardware inventory. Keep that as analysis only: no source import, binary redistribution, phone access, or boot experiments.
