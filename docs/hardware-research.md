@@ -7,6 +7,10 @@ This is a research plan, not a device modification guide. Keep work to public do
 
 ## What is established
 
+- Motorola issue #559 identifies the XT2135-2 HANOIP RETEU Android 12 firmware build, and a Motorola contributor links the published source tag `MMI-S2RIS32.32-20-9-9-2-1`. The tag contains a Hanoip-specific ARM64 kernel configuration fragment and Hanoip device-tree overlays.
+- The tagged SDMMAGPIE device tree identifies the Qualcomm platform as `qcom,sdmmagpie` and CPU nodes as ARMv8. The commercial SoC SKU is still not established by these reviewed files.
+- The exact source review and limitations are recorded in [docs/source-review-motorola-hanoip.md](source-review-motorola-hanoip.md).
+
 - Motorola's EU Declaration of Conformity identifies the Moto G60 model XT2135-2 and type MC38C.
 - Public Android community indexes associate the hanoip family with Moto G40 Fusion / Moto G60. This is family-level evidence; exact XT2135-2 variant mapping still needs verification.
 - The public Moto Common target index is archived and labels its hanoip target as dropped. This is historical community-maintenance metadata, not proof that the hardware is unusable or that all device development has ended.
