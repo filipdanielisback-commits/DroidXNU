@@ -22,6 +22,14 @@ REQUIRED_FALSE_FLAGS = (
 )
 
 
+def _unquote(value: str) -> str:
+    """Accept ordinary INI values and values wrapped in matching double quotes."""
+    value = value.strip()
+    if len(value) >= 2 and value[0] == value[-1] == '"':
+        return value[1:-1]
+    return value
+
+
 def validate_config(path: Path) -> list[str]:
     """Return validation errors; an empty list means the metadata is valid."""
     parser = configparser.ConfigParser()
@@ -37,22 +45,19 @@ def validate_config(path: Path) -> list[str]:
     for (section, key), expected in REQUIRED_VALUES.items():
         if not parser.has_option(section, key):
             errors.append(f"Missing [{section}] {key}")
-        elif parser.get(section, key) != expected:
-            errors.append(
-                f"[{section}] {key} must be {expected!r}, "
-                f"not {parser.get(section, key)!r}"
-            )
+            continue
+        actual = _unquote(parser.get(section, key))
+        if actual != expected:
+            errors.append(f"[{section}] {key} must be {expected!r}, not {actual!r}")
 
     for section, key in REQUIRED_FALSE_FLAGS:
         if not parser.has_option(section, key):
             errors.append(f"Missing [{section}] {key}")
             continue
-        try:
-            value = parser.getboolean(section, key)
-        except ValueError:
+        value = _unquote(parser.get(section, key)).lower()
+        if value not in {"true", "false"}:
             errors.append(f"[{section}] {key} must be true or false")
-            continue
-        if value:
+        elif value == "true":
             errors.append(f"[{section}] {key} must remain false in this research phase")
 
     return errors
