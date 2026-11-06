@@ -4,11 +4,11 @@ DroidXNU is organized as a device-port research project. The layers below are pr
 
 ## Layers
 
-1. **Host tools** — source checks, configuration validation, build orchestration and QEMU test helpers.
-2. **Emulated reference platform** — the first place to test project-owned kernel and loader code.
-3. **EFI loader research** — a future platform-independent loader interface and menu. No EFI executable exists yet.
+1. **Host tools** — source inspection, configuration validation, documentation checks and build orchestration.
+2. **Boot-chain research** — document the Moto G60's existing boot stages and supported image formats; no device boot code yet.
+3. **EFI / loader research** — determine whether an EFI-compatible interface exists or whether a different platform-specific loader boundary would be required. Do not assume UEFI is present.
 4. **Kernel integration** — study XNU's Mach, BSD, IOKit, platform expert and bootstrap code; identify required changes and their licenses.
-5. **SoC support** — architecture and SoC-specific interrupt, timer, memory and bus integration.
+5. **SoC support** — research architecture and SoC-specific interrupt, timer, memory and bus integration.
 6. **Device support** — Moto G60 board configuration and independently developed drivers.
 7. **User space** — a separate, compatible user environment; not assumed to be supplied by XNU or the linked source branch.
 
@@ -23,10 +23,8 @@ DroidXNU/
 ├── drivers/         # future project-owned drivers
 ├── kernel/
 │   └── xnu/         # future source integration / patch notes
-├── loader/
-│   └── efi/         # EFI research; no bootloader implementation yet
-└── tests/
-    └── qemu/        # future emulator tests
+└── loader/
+    └── efi/         # loader / EFI feasibility research
 ```
 
 ## Boot menu goals
@@ -34,13 +32,13 @@ DroidXNU/
 The conceptual menu has two choices:
 
 - **Boot experimental DroidXNU** — only enabled after a verified, compatible boot target exists.
-- **Reboot to original Android** — a future fallback path, subject to platform-specific validation.
+- **Reboot to original Android** — a future return path, subject to platform-specific validation.
 
 The menu must never imply that Android recovery is guaranteed. No code in this repository currently performs either action.
 
 ## Porting principles
 
-- Start with QEMU and project-owned test code.
+- Start with public-source analysis and host-side development.
 - Keep common kernel work separate from SoC and device-specific work.
 - Record provenance and license for every imported or modified file.
 - Do not include proprietary firmware, private keys, certificates, or system images.
@@ -49,7 +47,8 @@ The menu must never imply that Android recovery is guaranteed. No code in this r
 
 ## Non-goals
 
+- QEMU or emulator-based development and testing.
 - Impersonating an Apple device or accessing Apple services.
 - Circumventing activation, signatures, encryption, or access controls.
 - Redistributing proprietary iOS firmware or user-space images.
-- Claiming compatibility before repeatable tests exist.
+- Claiming compatibility before repeatable evidence exists.
