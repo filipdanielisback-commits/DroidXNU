@@ -66,3 +66,21 @@ The tagged kernel tree's `arch/arm64/boot/dts/qcom/Makefile` associates `CONFIG_
 The Makefile sets each overlay's base to `sdmmagpie-hanoi-base.dtb`. The base file `sdmmagpie-hanoi-base.dts` includes `sdmmagpie-moto-base.dtsi`. The HANOIP common overlay includes the HANOIP sensor overlay plus shared display, audio, battery/thermal and touchscreen overlay files.
 
 This establishes the source tree's candidate base/overlay relationships. It does **not** identify which hardware revision or DTBO combination was selected for the XT2135-2 European firmware build. The exact selected DTBO remains unknown without build-specific product configuration or authoritative firmware metadata.
+
+## Cross-check against the community HANOIP Android device tree
+
+The public [motorola-sm6150-devs/device_motorola_hanoip](https://github.com/motorola-sm6150-devs/device_motorola_hanoip) repository describes itself as an Android device tree for the Moto G40 Fusion / Moto G60 family. Its inspected `BoardConfig.mk` records:
+
+- `TARGET_ARCH := arm64`, `TARGET_ARCH_VARIANT := armv8-2a-dotprod`, and `TARGET_CPU_VARIANT := cortex-a76`.
+- A secondary 32-bit ARM target with `cortex-a55`.
+- `TARGET_BOARD_PLATFORM := sm6150`.
+- Kernel configuration fragments including `vendor/ext_config/moto-sdmmagpie-hanoip.config`.
+- A separate DTBO image and a boot image containing a DTB.
+
+This corroborates ARM64 and the HANOIP family association, and shows the Android build's declared platform and kernel configuration inputs. However, the community board config's `sm6150` label and Motorola's `SDMMAGPIE` source naming are not enough on their own to identify the exact silicon part. The earlier Snapdragon 732G / SM7150 label remains an unverified family-level lead, not a confirmed XT2135-2 fact.
+
+The community device tree is a different source project from Motorola's kernel release. Its README identifies the project as Apache-2.0; inspect each file's headers before reuse. Motorola's inspected device-tree files carry GPL-2.0-only notices. Do not mix or copy files until a file-by-file license review is complete.
+
+### Updated conclusion
+
+The source evidence supports **ARM64 + HANOIP family + SDMMAGPIE-named Motorola kernel DTS/overlays**. The exact XT2135-2 silicon identity and exact DTBO selected by the European firmware build remain open questions.
