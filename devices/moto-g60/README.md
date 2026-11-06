@@ -2,31 +2,35 @@
 
 **Port status: research only. No bootable port exists.**
 
-This directory tracks device-specific facts for the project's target model.
+Motorola's EU declaration identifies model XT2135-2 as the Moto G60, type MC38C. A public Android device tree covers the Moto G40 Fusion / Moto G60 family under the codename `hanoip`. That family-level reference is useful, but the exact XT2135-2 regional mapping and hardware revision still need confirmation.
 
-## Known project target
+## Project target
 
 - Device: Motorola Moto G60
 - Model: XT2135-2
+- Type identifier in Motorola declaration: MC38C
+- Reported family codename: `hanoip` (exact variant mapping to verify)
+- Reported SoC family: Qualcomm Snapdragon 732G / SM7150 (not yet verified against model-specific Motorola source)
 - Host development baseline: Windows + WSL2
 - Host memory planning target: 6 GB
 - Bootloader state requested by project: unlocked
 
-These are project planning details, not proof of hardware compatibility or a recommendation to modify a phone.
+These are project planning details and research leads, not proof of hardware compatibility or a recommendation to modify a phone.
 
 ## Research checklist
 
-- [ ] Confirm exact board name and revision.
-- [ ] Confirm SoC model and revision from reliable sources.
+- [x] Confirm the exact commercial model name and model number from Motorola documentation.
+- [ ] Confirm exact board name, revision and regional variant mapping.
+- [ ] Confirm SoC model and silicon revision from model-specific evidence.
 - [ ] Record CPU architecture and supported exception levels.
-- [ ] Find public device-tree and kernel-source references.
-- [ ] Document boot chain and available boot modes.
+- [ ] Review public device-tree and kernel-source references.
+- [ ] Document boot chain and supported image formats from public sources.
 - [ ] Identify interrupt controller, timer and memory layout.
 - [ ] Identify storage, display, touch, USB, audio and power components.
 - [ ] Map each component to available public documentation.
 - [ ] Record unknowns rather than guessing.
 
-See [compatibility.md](../../docs/compatibility.md) for the live status table.
+See [board facts](board-facts.md), [hardware research](../../docs/hardware-research.md), and [compatibility.md](../../docs/compatibility.md).
 
 ## Data handling
 
