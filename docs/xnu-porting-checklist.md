@@ -51,3 +51,8 @@ A source file, successful compilation, or menu mock-up does not demonstrate hard
 ## First-pass bootstrap research
 
 See [xnu-arm64-bootstrap-requirements.md](xnu-arm64-bootstrap-requirements.md) for the initial source-backed review of ARM64 entry, boot arguments, CPU startup, device-tree, SoC identification, interrupt-controller, timer and console dependencies. This is a requirements note only; no port is implemented.
+
+
+## Platform-service gap analysis
+
+See [xnu-platform-gap-analysis.md](xnu-platform-gap-analysis.md) for the preliminary service-by-service comparison between reviewed XNU requirements and Motorola HANOIP source evidence. Several core services remain unknown or unimplemented; this is not a go-ahead for loader development.
