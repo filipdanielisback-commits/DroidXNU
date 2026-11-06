@@ -26,8 +26,8 @@ This roadmap tracks research and implementation gates. A milestone is complete o
 - [x] Identify the Motorola kernel-source release linked to the XT2135-2 HANOIP RETEU Android 12 build.
 - [x] Review Hanoip ARM64 config and device-tree source files without importing vendor binaries.
 - [x] Record source tag, paths, provenance and license caveats in docs/research-sources.md and docs/source-review-motorola-hanoip.md.
-- [ ] Complete a source review note using docs/source-review-template.md.
-- [ ] Map relevant Linux hardware drivers to the hardware inventory.
+- [x] Complete a source review note using docs/source-review-template.md.
+- [x] Map visible HANOIP device-tree declarations to relevant Linux driver areas with confidence and limitation notes.
 
 ## Phase 3 — XNU feasibility study
 
